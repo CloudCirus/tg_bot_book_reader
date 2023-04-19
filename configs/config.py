@@ -1,7 +1,7 @@
 from environs import Env
 
 
-class Config:
+class BotConfig:
     _env = Env()
 
     def __init__(self, env_path: str | None = None):
