@@ -26,12 +26,18 @@ class Answers:
 
 
 @dataclass
-class ButtonsNames:
+class ButtonNames:
     edit_bookmarks = '❌ РЕДАКТИРОВАТЬ'
     delete = '❌'
     cancel = 'ОТМЕНИТЬ'
     forward = '>>'
     backward = '<<'
+
+
+@dataclass
+class Callbacks:
+    forward = 'forward'
+    backward = 'backward'
 
 
 @dataclass
