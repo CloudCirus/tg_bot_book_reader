@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, asdict
 
 
 @dataclass
@@ -40,3 +40,7 @@ class MenuCommandsArgs:
     continue_com = {'command': '/continue', 'description': 'Продолжить чтение'}
     bookmarks = {'command': '/bookmarks', 'description': 'Мои закладки'}
     help = {'command': '/help', 'description': 'Справка по работе бота'}
+
+    @classmethod
+    def to_dict(cls):
+        return asdict(cls())
