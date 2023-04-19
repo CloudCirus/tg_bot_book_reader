@@ -1,5 +1,5 @@
-BOOK_PATH = 'book/test_book.txt'
-PAGE_SIZE = 100
+BOOK_PATH = 'books/test_book_2.txt.txt'
+PAGE_SIZE = 1050
 
 book: dict[int, str] = {}
 
@@ -34,8 +34,11 @@ def prepare_book(path: str) -> None:
     start, page = 0, 1
     book_len = len(book_str)
     while start < book_len:
-        part, part_len = _get_part_text(book_str, start, PAGE_SIZE)
-        book[page] = part
+        try:
+            part, part_len = _get_part_text(book_str, start, PAGE_SIZE)
+        except TypeError:
+            break
+        book[page] = part.strip()
         start += part_len
         page += 1
 
