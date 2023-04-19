@@ -1,6 +1,6 @@
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from aiogram.utils.keyboard import InlineKeyboardBuilder
-from lexicons.lexicon_ru import ButtonNames, Callbacks
+from bot.lexicons.lexicon_ru import ButtonNames, Callbacks
 
 
 # генерируем клавиатуру для страниц книги
