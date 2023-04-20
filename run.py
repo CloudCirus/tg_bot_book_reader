@@ -1,7 +1,7 @@
 import asyncio
 
 from aiogram import Bot, Dispatcher
-from bot.configs import BotConfig
+from bot.configs.config import BotConfig
 from logs_settings import create_logger
 
 
