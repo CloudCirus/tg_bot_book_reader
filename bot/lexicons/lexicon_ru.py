@@ -44,11 +44,22 @@ class Callbacks:
 
 
 @dataclass
+class Commands:
+    start = '/start'
+    help = '/help'
+    beginning = '/beginning'
+    bookmarks = '/bookmarks'
+    contin = '/continue'
+
+
+@dataclass
 class MenuCommandsArgs:
-    beginning = {'command': '/beginning', 'description': 'В начало книги'}
-    continue_com = {'command': '/continue', 'description': 'Продолжить чтение'}
-    bookmarks = {'command': '/bookmarks', 'description': 'Мои закладки'}
-    help = {'command': '/help', 'description': 'Справка по работе бота'}
+    commands = Commands()
+
+    beginning = {'command': commands.beginning, 'description': 'В начало книги'}
+    contin = {'command': commands.contin, 'description': 'Продолжить чтение'}
+    bookmarks = {'command': commands.bookmarks, 'description': 'Мои закладки'}
+    help = {'command': commands.help, 'description': 'Справка по работе бота'}
 
     @classmethod
     def to_dict(cls):

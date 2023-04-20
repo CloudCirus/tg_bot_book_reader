@@ -4,7 +4,7 @@ from bot.lexicons.lexicon_ru import ButtonNames, Callbacks
 
 
 # генерируем клавиатуру для страниц книги
-def create_pagination_keyboard(page_number: int) -> InlineKeyboardMarkup:
+def create_pagination_keyboard(page_number: str) -> InlineKeyboardMarkup:
     kb_builder = InlineKeyboardBuilder()
     kb_builder.row(*[
         InlineKeyboardButton(text=ButtonNames.forward, callback_data=Callbacks.forward),
