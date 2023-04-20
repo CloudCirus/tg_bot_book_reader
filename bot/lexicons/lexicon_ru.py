@@ -38,6 +38,9 @@ class ButtonNames:
 class Callbacks:
     forward = 'forward'
     backward = 'backward'
+    edit_bookmarks = 'edit_bookmarks'
+    cancel = 'cancel'
+    delete = 'del'
 
 
 @dataclass
