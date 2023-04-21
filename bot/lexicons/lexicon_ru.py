@@ -1,4 +1,7 @@
 from dataclasses import dataclass, asdict
+from typing import Tuple, Dict
+
+from pydantic import BaseModel
 
 
 @dataclass
@@ -51,15 +54,11 @@ class Commands:
     contin = '/continue'
 
 
-@dataclass
-class MenuCommandsArgs:
-    commands = Commands()
-
-    beginning = {'command': commands.beginning, 'description': 'В начало книги'}
-    contin = {'command': commands.contin, 'description': 'Продолжить чтение'}
-    bookmarks = {'command': commands.bookmarks, 'description': 'Мои закладки'}
-    help = {'command': commands.help, 'description': 'Справка по работе бота'}
-
-    @classmethod
-    def to_dict(cls):
-        return asdict(cls())
+def get_menu_args() -> list[dict]:
+    _commands = Commands()
+    return [
+        {'command': _commands.beginning, 'description': 'В начало книги'},
+        {'command': _commands.contin, 'description': 'Продолжить чтение'},
+        {'command': _commands.bookmarks, 'description': 'Мои закладки'},
+        {'command': _commands.help, 'description': 'Справка по работе бота'}
+    ]
