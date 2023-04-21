@@ -20,7 +20,7 @@ router: Router = Router()
 @router.message(CommandStart())
 async def process_start_command(message: Message):
     await message.answer(Answers.start)
-    user_id = message.from_user
+    user_id = message.from_user.id
     if user_id not in users_db:
         users_db[user_id] = deepcopy(user_dict_template)
 
@@ -39,6 +39,8 @@ async def process_beginning_command(message: Message):
     user_id = message.from_user.id
     users_db[user_id]['page'] = 1
     text = book[users_db[user_id]['page']]
+    print(text)
+    print(f'{users_db[user_id]["page"]}/{len(book)}')
     await message.answer(
         text=text,
         reply_markup=create_pagination_keyboard(

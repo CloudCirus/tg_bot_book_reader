@@ -7,8 +7,8 @@ from bot.lexicons.lexicon_ru import ButtonNames, Callbacks
 def create_pagination_keyboard(page_number: str) -> InlineKeyboardMarkup:
     kb_builder = InlineKeyboardBuilder()
     kb_builder.row(*[
+        InlineKeyboardButton(text=ButtonNames.backward, callback_data=Callbacks.backward),
+        InlineKeyboardButton(text=page_number, callback_data=page_number),
         InlineKeyboardButton(text=ButtonNames.forward, callback_data=Callbacks.forward),
-        InlineKeyboardButton(text=str(page_number)),
-        InlineKeyboardButton(text=ButtonNames.backward, callback_data=Callbacks.backward)
     ])
     return kb_builder.as_markup()
