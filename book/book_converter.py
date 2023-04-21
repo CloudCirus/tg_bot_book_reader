@@ -41,6 +41,3 @@ def prepare_book(path: str) -> None:
         book[page] = part.strip()
         start += part_len
         page += 1
-
-
-prepare_book(BOOK_PATH)
